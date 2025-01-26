@@ -1,4 +1,4 @@
-package dev.oly.movieist.movies;
+package dev.oly.movieist.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,5 +1,7 @@
-package dev.oly.movieist.movies;
+package dev.oly.movieist.service;
 
+import dev.oly.movieist.repository.MovieRepository;
+import dev.oly.movieist.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

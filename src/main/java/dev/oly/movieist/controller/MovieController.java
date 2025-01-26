@@ -1,5 +1,7 @@
-package dev.oly.movieist.movies;
+package dev.oly.movieist.controller;
 
+import dev.oly.movieist.model.Movie;
+import dev.oly.movieist.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
