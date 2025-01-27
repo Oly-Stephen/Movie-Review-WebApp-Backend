@@ -1,14 +1,8 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-alpine
+FROM maven:3.8-openjdk-17 AS build
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Set the working directory
-WORKDIR /app
-
-# Copy the built JAR file into the container
-COPY target/movieist-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the port your app runs on
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/movieist-0.0.1-SNAPSHOT.jar movieist.jar
 EXPOSE 8080
-
-# Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "movieist.jar"]
